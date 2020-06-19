@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/style.css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<nav class="navbar navbar-light bg-dark">
+    <a class=" icon-camera-retro icon-large brown navbar-brand text-light" href="/"> Socimid</a>
+</nav>
+
+<h2 style="margin-top: 40px;" align="center"> Welcome to Socimid</h2>
+
+<div class="card_centering">
+    <div class="card text-center bg-light">
+        <div class="card-header bg-dark">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Futures</a>
+                </li>
+            </ul>
+        </div>
+        <div class=" card_sizing container mt-4 card-body">
+            <form action="sign_in" method="POST">{% csrf_token %}
+                <div class="row w-auto">
+                    <label for="inputText">Username</label>
+                    <input type="text" name="user_name" class="form-control" required>
+                    <p style="color: red;">{{ user_name_exist }}</p>
+                </div>
+                <div class="row w-auto">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" name="user_email" class="form-control" id="inputEmail4">
+                    <p style="color: red;">{{ user_exist }}</p>
+                </div>
+                <div class="row w-auto">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" name="user_password" class="form-control" id="inputPassword4" minlength="8"
+                        required>
+                </div>
+                <div class="row mt-4">
+                    <button type="submit" style="width: 90%; margin: auto;" class="btn btn-dark w-75">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

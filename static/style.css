@@ -1,0 +1,13 @@
+.card_centering {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    width: 25%;
+    margin-top: 50px;
+}
+
+.card_sizing{
+    width: 90%;
+    margin: auto;
+}
+
+.brown{color:white}
